@@ -3,7 +3,7 @@ title: "github code block에 line number 추가하기"
 classes: wide
 categories:
   - github
-date: 2019-03-29 19:00:00 -0600
+date: 2019-03-28 19:00:00 -0600
 ---
 
 마크다운 파일(*.md)에서 코드블럭을 작성하고 싶다면,
