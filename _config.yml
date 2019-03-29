@@ -211,11 +211,9 @@ kramdown:
   enable_coderay: false
   highlighter: rouge
   syntax_highlighter_opts:
-    blocks:
+    block:
       line_numbers: true
-
-
-
+      
 # Sass/SCSS
 sass:
   sass_dir: _sass
