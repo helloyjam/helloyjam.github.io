@@ -3,6 +3,8 @@ title: "[명령어] 특정 포트번호로 열린 네트워크 상태보기 및 
 classes: wide
 categories:
   - linux
+tag:
+  - command
 date: 2019-03-29 19:00:00 -0600
 ---
 
