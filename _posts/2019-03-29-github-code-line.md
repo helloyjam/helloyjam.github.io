@@ -22,15 +22,15 @@ def hello():
     print("world")
 ```
 
-line number를 추가하고 싶다면 두가지 방법이 있다.  
+line number를 추가하고 싶다면 두가지 방법이 있다.
 ### 첫번째 방법  
 ###### 코드블록 작성 시 위 아래에 해당 코드를 작성한다.
-<pre>
-{% highlight python linenos %}
-def hello()
-    print("world")
+```
+{% highlight python linenos %}  
+def hello()  
+    print("world")  
 {% endhighlight %}
-</pre>
+```
 
 ### 두번째 방법  
 ###### _config.yml에 아래의 코드를 추가 작성한다.
