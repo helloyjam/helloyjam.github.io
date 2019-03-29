@@ -27,9 +27,9 @@ line number를 추가하고 싶다면 두가지 방법이 있다.
 ### 첫번째 방법  
 ###### 코드블록 작성 시 위 코드의 맨 위와 아래에 해당 코드를 추가하자..!
 
-\{% highlight python linenos %\}  
+###### {% highlight python linenos %}  
 code_contents  
-\{% endhighlight %\}  
+###### {% endhighlight %}  
 
 ### 두번째 방법  
 ###### _config.yml에 아래의 코드를 추가 작성한다.
