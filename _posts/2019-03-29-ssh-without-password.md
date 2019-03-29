@@ -2,7 +2,7 @@
 title: "ssh 비밀번호 없이 로그인"
 classes: wide
 categories:
-  - github
+  - linux
 date: 2019-03-29 19:00:00 -0600
 ---
 
