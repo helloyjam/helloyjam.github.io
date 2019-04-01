@@ -22,17 +22,6 @@ DFS는 깊이 우선 탐색이라는 뜻이다.
 
 
 
-스택이라는 FILO 자료형을 이용하면 DFS를 재귀없이 구현할 수 있다.
-
-방문할 스택이 필요하다  
-방문한 곳은 rooms의 갯수와 동일하게 False 방문하지 않았다고 설정해준다.  
-방문할 곳의 key_list들을 tovisit스택에 추가하고  
-
-tovisit 스택을 계속 채워나간다.  
-
-이미 방문한 곳의 열쇠는 추가하지 않기 위해  
-if visited[key] == False 조건이 필요하다
-
 ```python
 class Solution(object):
     def canVisitAllRooms(self, rooms):
@@ -68,7 +57,53 @@ class Solution(object):
         return dfs(rooms, rooms[0])
 ```
 
-아래는 recursive로 코드를 짠 것이다.
+
+스택이라는 FILO 자료형을 이용하면 DFS를 재귀없이 구현할 수 있다.
+
+방문할 스택이 필요하다  
+방문한 곳은 rooms의 갯수와 동일하게 False 방문하지 않았다고 설정해준다.  
+방문할 곳의 key_list들을 tovisit스택에 추가하고  
+
+tovisit 스택을 계속 채워나간다.  
+
+이미 방문한 곳의 열쇠는 추가하지 않기 위해  
+if visited[key] == False 조건이 필요하다
+
+
+
+```python
+class Solution(object):
+    def canVisitAllRooms(self, rooms):
+        """
+        :type rooms: List[List[int]]
+        :rtype: bool
+        """
+        
+        
+        def dfs_visit(rooms, start_key, visited):
+            #print(start_key,"START_KEY", visited)
+            for key in start_key:
+                if visited[key] == False:
+                    visited[key] = True
+                    dfs_visit(rooms, rooms[key], visited)
+            
+        def dfs(rooms):
+                        
+            visited     = [False for _ in range(len(rooms))]
+            visited[0]  = True
+            dfs_visit(rooms, rooms[0], visited)
+        
+            #print(visited,"VISITED")
+            for v in visited:
+                if v == False:
+                    return False
+                
+            return True
+            
+        return dfs(rooms)
+```   
+
+는 recursive로 코드를 짠 것이다.
 
 dfs_visit이라는 함수를 따로 만들어주고,  
 처음 시작점을 지정해주고(rooms[0])  
@@ -127,35 +162,3 @@ rooms[3] = [0]이다.
 
 (방문했는지 확인하는 여부는 무한루프에 빠지지 않기 위함이다.)  
 이미 방문했다면 백트래킹하게 된다.  
-
-```python
-class Solution(object):
-    def canVisitAllRooms(self, rooms):
-        """
-        :type rooms: List[List[int]]
-        :rtype: bool
-        """
-        
-        
-        def dfs_visit(rooms, start_key, visited):
-            #print(start_key,"START_KEY", visited)
-            for key in start_key:
-                if visited[key] == False:
-                    visited[key] = True
-                    dfs_visit(rooms, rooms[key], visited)
-            
-        def dfs(rooms):
-                        
-            visited     = [False for _ in range(len(rooms))]
-            visited[0]  = True
-            dfs_visit(rooms, rooms[0], visited)
-        
-            #print(visited,"VISITED")
-            for v in visited:
-                if v == False:
-                    return False
-                
-            return True
-            
-        return dfs(rooms)
-```   
