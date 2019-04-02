@@ -6,7 +6,7 @@ categories:
 tags:
   - binary tree
   - bfs
-date: 2019-04-01 19:00:00 -0600
+date: 2019-04-02 19:00:00 -0600
 ---
 
 https://leetcode.com/problems/cousins-in-binary-tree/
