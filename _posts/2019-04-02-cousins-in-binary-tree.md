@@ -16,7 +16,7 @@ dictionary에 해당 노드의 depth와 parent node를 표시해주었다.
 
 그 뒤 x,y값의 깊이가 같은지 확인하고 부모노드가 같은지 확인하면 된다.
 
-```
+```python
 class Solution(object):
     def isCousins(self, root, x, y):
         """
