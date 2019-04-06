@@ -3,6 +3,8 @@ title: "순열 알고리즘"
 classes: wide
 categories:
   - algorithm
+tags:
+  - backtracking
 date: 2019-04-06 19:00:00 -0600
 ---
 
