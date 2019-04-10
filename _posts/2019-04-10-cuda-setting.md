@@ -43,6 +43,8 @@ cuDNN version을 확인하려면 다음과 같은 명령어를 사용하면된�
 `cat $HOME/usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2`  
 
 마지막으로 환경변수를 설정해주면 된다.
-`export PATH="$HOME/usr/local/cuda/bin:$PATH"`  
-`export CUDA_HOME=$HOME/usr/local/cuda`  
-`export LD_LIBRARY_PATH="$HOME/usr/local/cuda/lib64:$HOME/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"`  
+```text
+export PATH="$HOME/usr/local/cuda/bin:$PATH"  
+export CUDA_HOME=$HOME/usr/local/cuda
+export LD_LIBRARY_PATH="$HOME/usr/local/cuda/lib64:$HOME/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+```
