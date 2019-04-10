@@ -35,9 +35,11 @@ cuDNN 패키지를 다운로드하고 압축을 푼다.
 `tar -xzvf cudnn-툴킷버전-linux-x64-버전.tgz`  
 
 다음과 같은 파일들을 CUDA Toolkit directory에 복사한다.  
-`$ cp cuda/include/cudnn.h /usr/local/cuda/include`  
-`$ cp cuda/lib64/libcudnn* /usr/local/cuda/lib64`  
-`$ chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*`  
+```text
+$ cp cuda/include/cudnn.h /usr/local/cuda/include
+$ cp cuda/lib64/libcudnn* /usr/local/cuda/lib64  
+$ chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+```
 
 cuDNN version을 확인하려면 다음과 같은 명령어를 사용하면된다.  
 `cat $HOME/usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2`  
