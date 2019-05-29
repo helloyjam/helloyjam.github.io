@@ -83,19 +83,25 @@ value, k_idx = heapq.heappop(heap)
 [ (4, 0), (5, 2) ] 이 된다.  
 
 
+이 때, pop된 튜플은 (0, 1)이다.  
+value값은 신경쓰지말고, k_idx를 보자. k_idx값은 1이다.
+값 0 은 2번째 리스트([ 0, 9, 12, 20 ])에 있다는 의미이다.  
+
 ```python
 k_pointer[k_idx] += 1
 ```
-이 때, pop된 k_idx를 오른쪽으로 이동시킨 값을 heappush해준다.  
 
-그럼 (0, 1)에서 1은 두번째 list를 뜻하므로, [ 0, 9, 12, 20 ] 를 의미한다.  
-여기서 현재 k_pointer = [ 0, 0, 0 ] 에서 [ 0, 1, 0 ] 로 포인터 값을 증가시켜준다.  
+현재 포인터 위치(k_pointer) [ 0, 0, 0 ]에서 k_idx가 1이니까,  
+오른쪽으로 이동시키면(k_pointer[k_idx] += 1), [ 0, 1, 0 ] 이 된다.
 
 ```python
 p = k_pointer[k_idx] 
 ```
-p = k_pointer[k_idx] 라 가정했을때, 
-그리고 nums[k_idx][p] 값은 두번째 리스트의 9 값을 의미한다.   
+k번째 리스트의 현재 위치 p를 k_pointer[k_idx] 라 가정했을때, 
+그리고 nums[k_idx][p] 값은 두번째 리스트의 9 값을 의미한다.  
+
+9의 값을 힙에 다시 넣어준다. (넣어준 상태에서 구간범위를 구해보기 위해서)
+9의 값은 두번째 리스트 (k_idx = 1)에 있다.
 
 ```python
 heapq.heappush(heap, (nums[k_idx][p], k_idx))
