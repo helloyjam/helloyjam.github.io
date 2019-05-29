@@ -84,7 +84,7 @@ value, k_idx = heapq.heappop(heap)
 
 
 이 때, pop된 튜플은 (0, 1)이다.  
-value값은 신경쓰지말고, k_idx를 보자. k_idx값은 1이다.
+value값은 신경쓰지말고, k_idx를 보자. k_idx값은 1이다.  
 값 0 은 2번째 리스트([ 0, 9, 12, 20 ])에 있다는 의미이다.  
 
 ```python
