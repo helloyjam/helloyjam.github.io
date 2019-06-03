@@ -26,13 +26,27 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
 ### 최대가 되는 subarray 찾기  
 
-초기에 최대가
+초기에 최대가 되는 subarray를 어떻게 찾을까 고민하다가,  
+윈도우 사이즈 1,  
+윈도우 사이즈 2,
+윈도우 사이즈 3,
+윈도우 사이즈 4,  
+.  
+.  
+.  
 
-<img width="462" alt="스크린샷 2019-06-03 오후 8 50 04" src="https://user-images.githubusercontent.com/10937193/58800021-ceadbe80-8641-11e9-83c2-1b86ca940ecb.png">
+윈도우 사이즈 별로 subarray의 product를 dp로 계산하려했다.  
+아래 그림을 보면  
 
- 
+row별로 윈도우 사이즈에 따라서 해당 구간의 결과값을 저장했었는데,  
+
+183/184 test case에서 에러가 발생했다. O(n^2)이었으나 Time limit excess가 떴다.  
+
+<img width="570" alt="스크린샷 2019-06-03 오후 8 59 40" src="https://user-images.githubusercontent.com/10937193/58800334-8cd14800-8642-11e9-8196-28eabf7de743.png">
+
+위의 방법을 코드로 작성한 것은 아래와 같다.  
+
 ```python
-
 class Solution(object):
     def maxProduct(self, nums):
         """
@@ -71,3 +85,27 @@ class Solution(object):
             
         return max_value
 ``` 
+
+
+### 두번째 시도
+
+중간에 최대값과 최소값 사이에 존재하는 어중간한 값은 결과에 영향을 미치지 않는 것을 발견했다.  
+
+<img width="625" alt="스크린샷 2019-06-03 오후 9 03 14" src="https://user-images.githubusercontent.com/10937193/58800519-0ec17100-8643-11e9-8f64-135f17deea4c.png">
+
+위와 같이 현재 위치에서 얻을 수 있는 최대값과 최소값만을 가지고도 결과값을 낼 수 있다.  
+
+첫번째 값인 2에서는 둘다 min값과 max값이 2이고,  
+
+두번째 값인 3에서는  
+3이 최소값이고, 2와 3을 곱한 6이 최대값이다.  
+
+두번째 값인 3의 시점에서는  
+min값은 3이고,  
+max값은 6이다.  
+
+이런 방식으로 최대 최소 값을 구하면 다음과 같은 그림을 그릴 수 있다.  
+
+<img width="1028" alt="스크린샷 2019-06-03 오후 9 03 24" src="https://user-images.githubusercontent.com/10937193/58800725-8f806d00-8643-11e9-8ef4-7d472420e5af.png">
+
+
