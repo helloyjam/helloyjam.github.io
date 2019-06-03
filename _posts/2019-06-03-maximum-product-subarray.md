@@ -108,4 +108,32 @@ max값은 6이다.
 
 <img width="1028" alt="스크린샷 2019-06-03 오후 9 03 24" src="https://user-images.githubusercontent.com/10937193/58800725-8f806d00-8643-11e9-8ef4-7d472420e5af.png">
 
+아래와 같이 식을 만들 수 있으나, 순차적으로 계산하면 값이 꼬인다.  
+그 이유는 current_max가 다음 라인인 current_min값에 영향을 주기 때문이다.  
+current_max = max(현재값, 현재값 x current_max, 현재값 x current_min)  
+current_min = min(현재값, 현재값 x current_max, 현재값 x current_min)  
 
+current_max, current_min = max(현재값, 현재값 x current_max, 현재값 x current_min), min(현재값, 현재값 x current_max, 현재값 x current_min)  
+위에 같이 동시에 계산해야한다.  
+
+정답 코드는 아래와 같다.  
+
+```python
+class Solution(object):
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max_value = float("-inf")
+        cur_max = 1
+        cur_min = 1
+        for n in nums:
+        
+            cur_max, cur_min = max(n, n*cur_max, n*cur_min), min(n, n*cur_min, n*cur_max)
+            
+            max_value = max(max_value, cur_max)
+            
+        #print(max_value)
+        return max_value   
+```  
