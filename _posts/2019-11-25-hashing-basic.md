@@ -29,6 +29,14 @@ key값의 최대 크기만큼 배열이 할당된다.
 크기는 매우 큰데, 저장하고자 하는 데이터가 적다면 공간을 낭비 할 수 있다.  
 
 
+Limitations:
+
+Prior knowledge of maximum key value  
+Practically useful only if the maximum value is very less.  
+It causes wastage of memory space if there is a significant difference between total records and maximum value.  
+<strong>Hashing</strong> can overcome these limitations of direct address tables.  
+
+
 ## Hash Table
 
 해시함수는 해쉬값의 개수보다 대개 많은 키값을 해쉬값으로 변환하기 때문에  
