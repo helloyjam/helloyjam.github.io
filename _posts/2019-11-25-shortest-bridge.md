@@ -5,7 +5,7 @@ categories:
   - algorithm
 tags:
   - bfs
-date: 2019-05-29 19:00:00 -0600
+date: 2019-11-25 19:00:00 -0600
 ---
 
 <https://leetcode.com/problems/shortest-bridge>  
